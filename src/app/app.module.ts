@@ -1,9 +1,10 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule, Component} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {MdCheckboxModule} from '@angular/material';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import {AppComponent} from './app.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -19,13 +20,13 @@ export class Home { }
 
   // !!! If `<md-checkbox>` is removed from this template, the route
   //     works even though `OtherModule` is never imported.
-  template: 'Other page <md-checkbox>Check</md-checkbox>'
+  template: 'Other page <mat-checkbox>Check</mat-checkbox>'
 })
 export class Other { }
 
 
 @NgModule({
-  imports: [MdCheckboxModule],
+  imports: [MatCheckboxModule, NoopAnimationsModule],
   declarations: [Other]
 })
 export class OtherModule { }
